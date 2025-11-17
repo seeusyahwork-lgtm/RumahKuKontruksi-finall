@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // ===== LAYOUTS =====
 import MainLayout from "./layouts/MainLayout";
 import KonsumenLayout from "./layouts/KonsumenLayout";
+import SuperadminLayout from "./layouts/SuperAdminLayout";
 
 // ===== HALAMAN UMUM =====
 import Home from "./pages/Home";
@@ -16,6 +17,9 @@ import Contact from "./pages/Contact";
 import TimelineProyek from "./pages/konsumen/TimelineProyek";
 import Proyek from "./pages/konsumen/Proyek";
 import Profil from "./pages/konsumen/Profil";
+
+// ===== HALAMAN SUPER ADMIN =====
+
 
 
 
@@ -38,7 +42,9 @@ function App() {
           <Route path="profil" element={<Profil />} />
         </Route>
 
-
+        {/* ================== SUPER ADMIN LAYOUT ================== */}
+        <Route path="/superadmin" element={<SuperadminLayout />}>
+        </Route>
         
       </Routes>
     </Router>

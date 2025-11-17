@@ -59,7 +59,7 @@ const Sidebar = () => {
 
                 {/* DASHBOARD */}
                 <a
-                    href="/admin/dashboard"
+                    href="/superadmin/dashboard"
                     className="flex items-center gap-3 p-3 rounded-lg hover:bg-teal-600 transition group"
                 >
                     <FiHome className="text-xl" />
@@ -88,7 +88,7 @@ const Sidebar = () => {
 
                     {/* SUBMENU */}
                     {!isCollapsed && openUserMenu && (
-                        <div className="ml-10 mt-2 flex flex-col gap-2">
+                        <div className="ml-10 mt-2 flex flex-col gap-1">
                             <a href="/admin/user/super-admin" className="text-sm p-2 rounded hover:bg-teal-600 transition">Super Admin</a>
                             <a href="/admin/user/admin" className="text-sm p-2 rounded hover:bg-teal-600 transition">Admin</a>
                             <a href="/admin/user/pengawas" className="text-sm p-2 rounded hover:bg-teal-600 transition">Pengawas</a>
