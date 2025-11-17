@@ -23,8 +23,7 @@ export default [
         label: "Manajemen User",
         activeStartsWith: "/admin/user",
         items: [
-            { label: "Super Admin", href: "/admin/user/super-admin" },
-            { label: "Admin", href: "/admin/user/admin" },
+            { label: "Admin", href: "/superadmin/data-admin" },
             { label: "Pengawas", href: "/admin/user/pengawas" },
             { label: "Mandor", href: "/admin/user/mandor" },
             { label: "Konsumen", href: "/admin/user/konsumen" },

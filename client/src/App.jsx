@@ -20,6 +20,8 @@ import Profil from "./pages/konsumen/Profil";
 
 // ===== HALAMAN SUPER ADMIN =====
 import DashboardSuperadmin from "./pages/superadmin/DashboardSuperadmin";
+import DataAdmin from "./pages/superadmin/DataAdminPage";
+import DataPengawas from "./pages/superadmin/DataPengawasPage";
 
 
 
@@ -46,6 +48,9 @@ function App() {
         {/* ================== SUPER ADMIN LAYOUT ================== */}
         <Route path="/superadmin" element={<SuperadminLayout />}>
           <Route path="dashboard" element={<DashboardSuperadmin />} />
+          <Route path="data-admin" element={<DataAdmin />} />
+          <Route path="data-pengawas" element={<DataPengawas />} />
+
         </Route>
         
       </Routes>
