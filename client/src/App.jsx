@@ -25,6 +25,18 @@ import DataMandor from "./pages/superadmin/DataMandorPage";
 
 
 
+// ===== HALAMAN ADMIN =====
+import AdminLayout from "./layouts/AdminLayout";
+import DashboardAdmin from "./pages/admin/DashboardAdmin";
+
+// ===== HALAMAN PENGAWAS =====
+import PengawasLayout from "./layouts/PengawasLayout";
+import DashboardPengawas from "./pages/pengawas/DashboardPengawas";
+
+// ===== HALAMAN MANDOR =====
+import MandorLayout from "./layouts/MandorLayout";
+import DashboardMandor from "./pages/mandor/DashboardMandor";
+
 function App() {
   return (
     <Router>
@@ -51,6 +63,21 @@ function App() {
           <Route path="data-mandor" element={<DataMandor />} />
        
 
+        </Route>
+
+        {/* ================== ADMIN LAYOUT ================== */}
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route path="dashboard" element={<DashboardAdmin />} />
+        </Route>
+
+        {/* ================== PENGAWAS LAYOUT ================== */}
+        <Route path="/pengawas" element={<PengawasLayout />}>
+          <Route path="dashboard" element={<DashboardPengawas />} />
+        </Route>
+
+        {/* ================== MANDOR LAYOUT ================== */}
+        <Route path="/mandor" element={<MandorLayout />}>
+          <Route path="dashboard" element={<DashboardMandor />} />
         </Route>
       </Routes>
     </Router>
