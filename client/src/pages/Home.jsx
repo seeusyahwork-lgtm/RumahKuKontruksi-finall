@@ -1,5 +1,4 @@
 // client/src/pages/Home.jsx
-import React from "react";
 import { motion } from "framer-motion";
 import Slide from "../components/Slide";
 
@@ -24,7 +23,7 @@ const Home = () => {
       <Slide />
 
       {/* ================= TENTANG RUMAHKU KONSTRUKSI ================= */}
-      <section className="py-24 px-6 bg-gray-50">
+      <section className="py-24 px-6 bg-white">
         <motion.div
           className="max-w-6xl mx-auto text-center"
           initial="hidden"
@@ -32,13 +31,13 @@ const Home = () => {
           viewport={{ once: true }}
         >
           <motion.h2
-            className="text-4xl font-bold mb-6 text-teal-700"
+            className="text-heading-l-bold mb-6 text-primary-main"
             variants={fadeUp}
           >
             Tentang RumahKu Konstruksi
           </motion.h2>
           <motion.p
-            className="text-lg leading-relaxed text-gray-700 max-w-4xl mx-auto"
+            className="text-l-regular text-neutral-90 max-w-4xl mx-auto"
             variants={fadeUp}
             custom={1}
           >
@@ -60,10 +59,10 @@ const Home = () => {
       </section>
 
       {/* ================= FITUR UNGGULAN ================= */}
-      <section className="py-24 px-6 bg-gradient-to-b from-white to-teal-50">
+      <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <motion.h2
-            className="text-4xl font-bold mb-12 text-teal-700"
+            className="text-heading-l-bold mb-12 text-primary-main"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -97,20 +96,20 @@ const Home = () => {
             ].map((item, index) => (
               <motion.div
                 key={index}
-                className="group bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+                className="group bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-neutral-20"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={index * 0.3}
               >
-                <div className="text-5xl mb-5 group-hover:scale-110 transition-transform">
+                <div className="text-display mb-5 group-hover:scale-110 transition-transform">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-teal-700">
+                <h3 className="text-heading-s-bold mb-3 text-primary-main">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                <p className="text-l-regular text-neutral-90">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -118,7 +117,7 @@ const Home = () => {
       </section>
 
       {/* ================= PERANCANGAN DAN PERENCANAAN ================= */}
-      <section className="bg-teal-50 py-24 border-t border-teal-100">
+      <section className="bg-primary-surface py-24 border-t border-primary-border">
         <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
           <motion.img
             src="https://images.unsplash.com/photo-1608303588026-884930af2559?q=80&w=703&auto=format&fit=crop"
@@ -135,21 +134,22 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl font-bold text-teal-700 mb-4">
+            <h2 className="text-heading-l-bold text-primary-main mb-4">
               Perancangan dan Perencanaan
             </h2>
-            <p className="text-gray-700 leading-relaxed text-lg">
+            <p className="text-l-regular text-neutral-90">
               Semua proyek besar dimulai dari perencanaan yang baik. Kami
               membantu Anda dalam setiap langkah — mulai dari desain arsitektur,
               analisa kebutuhan, hingga perhitungan biaya material. Dengan tim
-              profesional dan pendekatan sistematis, hasil rancangan mencerminkan
-              gaya hidup Anda sekaligus efisien secara fungsional.
+              profesional dan pendekatan sistematis, hasil rancangan
+              mencerminkan gaya hidup Anda sekaligus efisien secara fungsional.
               <br />
               <br />
               Kami juga menyediakan simulasi 3D agar Anda dapat melihat hasil
               akhir bangunan sebelum pembangunan dimulai. Setiap detail
               dipertimbangkan: dari tata ruang, pencahayaan alami, hingga
-              sirkulasi udara — memastikan rumah Anda nyaman, estetis, dan tahan lama.
+              sirkulasi udara — memastikan rumah Anda nyaman, estetis, dan tahan
+              lama.
             </p>
           </motion.div>
         </div>
@@ -173,13 +173,14 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl font-bold text-teal-700 mb-4">
+            <h2 className="text-heading-l-bold text-primary-main mb-4">
               Implementasi dan Pengawasan Lapangan
             </h2>
-            <p className="text-gray-700 leading-relaxed text-lg">
+            <p className="text-l-regular text-neutral-90">
               Setelah desain disetujui, tim kami mengawal implementasi di
               lapangan. Anda tidak perlu khawatir soal keterlambatan, kualitas,
-              atau pemborosan — semuanya dikontrol dengan sistem pemantauan kami.
+              atau pemborosan — semuanya dikontrol dengan sistem pemantauan
+              kami.
               <br />
               <br />
               Setiap progres, dokumentasi, dan laporan harian dapat diakses
@@ -193,26 +194,27 @@ const Home = () => {
 
       {/* ================= PENUTUP / AJAKAN ================= */}
       <motion.section
-        className="py-24 px-6 bg-gradient-to-r from-teal-700 to-teal-600 text-white text-center"
+        className="py-24 px-6 bg-primary-main text-neutral-10 text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
       >
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6">
+          <h2 className="text-heading-l-bold text-neutral-10 mb-6">
             Siap Mewujudkan Proyek Impian Anda?
           </h2>
-          <p className="text-lg leading-relaxed text-teal-100">
-            Dengan RumahKu Konstruksi, Anda tidak hanya membangun rumah —
-            tetapi juga membangun pengalaman yang lebih baik dalam setiap
-            langkahnya. Kami menghadirkan solusi menyeluruh untuk perencanaan,
-            implementasi, dan pengawasan proyek agar semua berjalan lancar,
-            transparan, dan terukur.
+          <p className="text-l-regular text-neutral-40">
+            Dengan RumahKu Konstruksi, Anda tidak hanya membangun rumah — tetapi
+            juga membangun pengalaman yang lebih baik dalam setiap langkahnya.
+            Kami menghadirkan solusi menyeluruh untuk perencanaan, implementasi,
+            dan pengawasan proyek agar semua berjalan lancar, transparan, dan
+            terukur.
             <br />
             <br />
             Mulailah perjalanan Anda bersama kami hari ini, dan rasakan
-            bagaimana teknologi membuat proses konstruksi lebih mudah dan menyenangkan.
+            bagaimana teknologi membuat proses konstruksi lebih mudah dan
+            menyenangkan.
           </p>
         </div>
       </motion.section>
