@@ -19,7 +19,7 @@ export default function AdminRow({ admin, onEdit, onDelete, onDetail }) {
     <tr className="hover:bg-slate-50 transition">
       <td className="pl-4 py-3">
         <img
-          src={admin.foto !== "NULL" ? admin.foto : `https://placehold.co/45`}
+          src={admin.foto !== "NULL" ? admin.foto : `https://placehold.co/200`}
           alt="avatar"
           className="w-10 rounded-full object-cover text-m-regular text-primary-main"
         />

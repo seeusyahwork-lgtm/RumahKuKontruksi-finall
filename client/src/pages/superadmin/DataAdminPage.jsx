@@ -4,7 +4,7 @@ import AdminTable from "../../components/admin/AdminTable";
 import supabase from "../../supabase-client";
 
 export default function DataAdminPage() {
-  const [admins, setAdmins] = useState([]);
+  const [dataAdmin, setDataAdmin] = useState([]);
 
   const fetchAdmins = async () => {
     try {
@@ -13,7 +13,7 @@ export default function DataAdminPage() {
         .select("*");
       if (error) throw new Error(error.message);
 
-      setAdmins(data);
+      setDataAdmin(data);
     } catch (err) {
       console.log(err);
     }
@@ -31,7 +31,7 @@ export default function DataAdminPage() {
       </div>
 
       {/* TABLE COMPONENT */}
-      <AdminTable data={admins} />
+      <AdminTable data={dataAdmin} />
     </div>
   );
 }
