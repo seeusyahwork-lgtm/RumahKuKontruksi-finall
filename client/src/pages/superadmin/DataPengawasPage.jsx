@@ -2,19 +2,26 @@
 
 import { useEffect, useState } from "react";
 import PengawasTable from "../../components/pengawas/PengawasTable";
-import supabase from "../../supabase-client";
 
 export default function DataPengawasPage() {
   const [dataPengawas, setDataPengawas] = useState([]);
 
   const fetchDataPengawas = async () => {
     try {
-      const { error, data } = await supabase
-        .from("tb_detail_pengawas")
-        .select("*");
-      if (error) throw new Error(error.message);
+      const response = await fetch("http://localhost:3000/api/pengawas", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          // Authorization: `Bearer ${token}`,
+        },
+      });
+      const result = await response.json();
 
-      setDataPengawas(data);
+      if (!response.ok) {
+        if (result.success === false) throw new Error(result.message);
+      }
+
+      setDataPengawas(result.data);
     } catch (err) {
       console.log(err);
     }

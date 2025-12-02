@@ -1,19 +1,26 @@
 // client/src/pages/superadmin/DataMandorPage.jsx
 import { useEffect, useState } from "react";
 import MandorTable from "../../components/mandor/MandorTable";
-import supabase from "../../supabase-client";
 
 export default function DataMandorPage() {
   const [dataMandor, setDataMandor] = useState([]);
 
   const fetchDataMandor = async () => {
     try {
-      const { error, data } = await supabase
-        .from("tb_detail_mandor")
-        .select("*");
-      if (error) throw new Error(error.message);
+      const response = await fetch("http://localhost:3000/api/mandor", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          // Authorization: `Bearer ${token}`,
+        },
+      });
+      const result = await response.json();
 
-      setDataMandor(data);
+      if (!response.ok) {
+        if (result.success === false) throw new Error(result.message);
+      }
+
+      setDataMandor(result.data);
     } catch (err) {
       console.log(err);
     }

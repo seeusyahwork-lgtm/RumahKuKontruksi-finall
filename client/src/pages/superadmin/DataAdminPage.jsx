@@ -1,19 +1,26 @@
 // client/src/pages/superadmin/DataAdminPage.jsx
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import AdminTable from "../../components/admin/AdminTable";
-import supabase from "../../supabase-client";
 
 export default function DataAdminPage() {
   const [dataAdmin, setDataAdmin] = useState([]);
 
   const fetchAdmins = async () => {
     try {
-      const { error, data } = await supabase
-        .from("tb_detail_admin")
-        .select("*");
-      if (error) throw new Error(error.message);
+      const response = await fetch("http://localhost:3000/api/admin", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          // Authorization: `Bearer ${token}`,
+        },
+      });
+      const result = await response.json();
 
-      setDataAdmin(data);
+      if (!response.ok) {
+        if (result.success === false) throw new Error(result.message);
+      }
+
+      setDataAdmin(result.data);
     } catch (err) {
       console.log(err);
     }
