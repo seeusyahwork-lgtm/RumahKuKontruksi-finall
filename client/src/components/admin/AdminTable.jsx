@@ -10,7 +10,6 @@ export default function AdminTable({ data }) {
   const [search, setSearch] = useState("");
   const [role, setRole] = useState("all");
   const [sort, setSort] = useState("name-asc");
-  console.log(admins);
 
   useEffect(() => {
     setAdmins(data);
