@@ -1,14 +1,14 @@
-// src/controllers/projectsController.js
-const { supabase } = require('../lib/supabaseClient');
+//* src/controllers/projectsController.js
+import supabase from "../lib/supabaseClient.js";
 
-const TABLE = 'tb_proyek'; // sesuaikan kalau beda
+const TABLE = "tb_proyek"; // sesuaikan kalau beda
 
-exports.listProjects = async (req, res, next) => {
+export const listProjects = async (req, res, next) => {
   try {
     const { data, error } = await supabase
       .from(TABLE)
-      .select('*')
-      .order('created_at', { ascending: false });
+      .select("*")
+      .order("created_at", { ascending: false });
 
     if (error) throw error;
     res.json({ data });
@@ -17,13 +17,13 @@ exports.listProjects = async (req, res, next) => {
   }
 };
 
-exports.getProjectById = async (req, res, next) => {
+export const getProjectById = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { data, error } = await supabase
       .from(TABLE)
-      .select('*')
-      .eq('id', id)
+      .select("*")
+      .eq("id", id)
       .single();
 
     if (error) throw error;
@@ -33,7 +33,7 @@ exports.getProjectById = async (req, res, next) => {
   }
 };
 
-exports.createProject = async (req, res, next) => {
+export const createProject = async (req, res, next) => {
   try {
     const payload = req.body;
     const { data, error } = await supabase
@@ -49,14 +49,14 @@ exports.createProject = async (req, res, next) => {
   }
 };
 
-exports.updateProject = async (req, res, next) => {
+export const updateProject = async (req, res, next) => {
   try {
     const { id } = req.params;
     const updates = req.body;
     const { data, error } = await supabase
       .from(TABLE)
       .update(updates)
-      .eq('id', id)
+      .eq("id", id)
       .select()
       .single();
 
@@ -67,13 +67,13 @@ exports.updateProject = async (req, res, next) => {
   }
 };
 
-exports.deleteProject = async (req, res, next) => {
+export const deleteProject = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { data, error } = await supabase
       .from(TABLE)
       .delete()
-      .eq('id', id)
+      .eq("id", id)
       .select()
       .single();
 
