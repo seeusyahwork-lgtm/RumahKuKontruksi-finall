@@ -7,7 +7,10 @@ import morgan from "morgan";
 
 //! Routes
 // import authRouter from "./routes/auth";
-import projectsRouter from "./routes/projectRoutes.js";
+import projectRouter from "./routes/projectRoutes.js";
+import adminRouter from "./routes/adminRoutes.js";
+import pengawasRouter from "./routes/pengawasRoutes.js";
+import mandorRouter from "./routes/mandorRoutes.js";
 // import { errorHandler } from "./middleware/errorHandler.js";
 
 //! Config
@@ -24,7 +27,10 @@ app.get("/health", (req, res) => res.json({ status: "ok" }));
 
 //! api routes
 // app.use(errorHandler);
-app.use("/api/projects", projectsRouter);
+app.use("/api/project", projectRouter);
+app.use("/api/admin", adminRouter);
+app.use("/api/pengawas", pengawasRouter);
+app.use("/api/mandor", mandorRouter);
 // app.use('/api/auth', authRouter);
 
 //! Start server
