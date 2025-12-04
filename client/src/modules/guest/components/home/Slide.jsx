@@ -1,4 +1,4 @@
-import React from "react";
+// src/modules/guest/components/home/Slide.jsx
 
 const Slide = () => {
   return (
