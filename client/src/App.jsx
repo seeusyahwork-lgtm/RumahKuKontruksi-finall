@@ -7,9 +7,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // ===== HALAMAN UMUM =====
 import MainLayout from "./layouts/MainLayout";
-import Home from "./pages/Home";
-import About from "./pages/Tentang";
-import Contact from "./pages/Contact";
+import Home from "./modules/guest/Home";
+import About from "./modules/guestTentang";
+import Contact from "./modules/guest/Contact";
 
 // ===== HALAMAN KONSUMEN =====
 import KonsumenLayout from "./layouts/KonsumenLayout";

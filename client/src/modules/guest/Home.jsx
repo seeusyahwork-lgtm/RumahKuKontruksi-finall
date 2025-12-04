@@ -1,6 +1,6 @@
-// client/src/pages/Home.jsx
+// client/src/modules/guest/Home.jsx
 import { motion } from "framer-motion";
-import Slide from "../components/Slide";
+import Slide from "../../components/Slide";
 
 // Animasi umum (reusable variants)
 const fadeUp = {
